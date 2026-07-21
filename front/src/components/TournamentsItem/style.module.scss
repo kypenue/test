@@ -1,0 +1,82 @@
+.activeTournament,
+.completedTournament {
+    padding: 16px 20px;
+    border-radius: 10px 10px 0 0;
+    background-color: rgba(28, 23, 58, 1);
+    border: 1px solid rgba(97, 34, 224, 0.3);
+}
+
+.shortCard, .completedTournament {
+    border-radius: 10px;
+
+}
+
+.activeTournament {
+    background-color: #22195A;
+}
+
+.buttons {
+    :global {
+        .ant-btn-default {
+            margin-right: 12px;
+            background-color: #22195A;
+            color: rgba(185, 190, 236, 1);
+        }
+    }
+}
+
+.label {
+    font-size: 17px;
+    color: rgba(185, 190, 236, 0.6);
+}
+
+.title {
+    font-size: 22px;
+    font-weight: bold;
+    color: rgba(185, 190, 236, 1);
+}
+
+.date {
+    font-size: 19px;
+    color: rgba(185, 190, 236, 1);
+}
+
+.actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 12px;
+}
+
+.greenButton {
+    background-color: #5EDEA8 !important;
+    color: #0E0029 !important;
+}
+
+.redButton {
+    background-color: #DE5E5E !important;
+    color: #0E0029 !important;
+}
+
+.blueButton {
+    background-color: #5e6fde !important;
+    color: white !important;
+}
+
+.tournamentCard {
+    border-radius: 10px;
+    background-color: #0E0029;
+}
+
+.footer {
+    padding: 16px 20px;
+    width: 100%;
+}
+
+.settings {
+    margin-top: 12px
+}
+
+.stagesButton {
+    display: flex;
+    gap: 12px;
+}

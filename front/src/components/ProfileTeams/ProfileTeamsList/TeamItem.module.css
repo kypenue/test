@@ -1,0 +1,47 @@
+
+.root {
+    width: 100%;
+    align-items: center;
+    padding-bottom: 8px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.image {
+    object-fit: contain;
+    width: 100%
+}
+
+.card {
+    display: flex;
+    place-items: center; /* Modern browsers including Safari */
+    overflow: hidden;
+    border-radius: 0.625rem;
+    box-shadow: 0.25rem 0.25rem 0.5rem rgba(0, 0, 0, 0.25);
+    transition: transform 0.2s;
+    position: relative; /* Add position relative to establish a positioning context */
+}
+
+
+
+.card__background {
+    background-size: contain !important;
+    background-position: center !important;
+    background-repeat: no-repeat !important;
+    max-width: 100%;
+    width: 80px !important;
+    height: 80px !important;
+}
+
+
+
+.card__title {
+    font-weight: 800;
+    color: white;
+
+    width: 100%; /* Ensure the title takes full width */
+}
+
+.card:hover {
+    transform: scale(1.03);
+    transition: transform 0.2s;
+}

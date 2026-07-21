@@ -1,0 +1,145 @@
+.section {
+    width: 100%;
+    background: var(--cuply-main-bg);
+    padding: 36px var(--cuply-layout-pad-inline) 40px;
+
+    @media (min-width: 768px) {
+        padding: 44px var(--cuply-layout-pad-inline) 48px;
+    }
+
+    @media (min-width: 992px) {
+        padding: 48px var(--cuply-layout-pad-inline) 56px;
+    }
+}
+
+.inner {
+    max-width: var(--cuply-header-footer-inner-max);
+    margin: 0 auto;
+    width: 100%;
+}
+
+.heading {
+    margin: 0 0 36px;
+    font-weight: 500;
+    font-size: 48px;
+    line-height: 1.05;
+    letter-spacing: -0.02em;
+    color: #fff;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 16px;
+
+    @media (min-width: 768px) {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 24px;
+    }
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    min-height: 0;
+    padding: 24px;
+    border-radius: 12px;
+    background: #101b3c;
+    box-sizing: border-box;
+}
+
+.cardHead {
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+}
+
+.icon {
+    flex-shrink: 0;
+    width: 40px;
+    height: 40px;
+    display: block;
+}
+
+.titleBlock {
+    flex: 1;
+    min-width: 0;
+}
+
+.titleRow {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 10px;
+}
+
+.cardTitle {
+    margin: 0;
+    font-size: 17px;
+    font-weight: 700;
+    line-height: 1.25;
+    color: #fff;
+}
+
+.badge {
+    flex-shrink: 0;
+    padding: 4px 10px;
+    border-radius: 999px;
+    font-size: 12px;
+    font-weight: 600;
+    line-height: 1.2;
+    color: #9ec5ff;
+    background: rgba(59, 89, 255, 0.22);
+    border: 1px solid rgba(158, 197, 255, 0.2);
+}
+
+.description {
+    margin: 0;
+    font-size: 15px;
+    font-weight: 500;
+    line-height: 1.45;
+    color: rgba(239, 239, 239, 0.72);
+}
+
+.cta {
+    margin-top: auto;
+    align-self: flex-start;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 0;
+    border: none;
+    background: none;
+    font-size: 15px;
+    font-weight: 600;
+    line-height: 1.2;
+    color: #00a3ff;
+    text-decoration: none;
+    cursor: pointer;
+    transition: color 0.15s ease, opacity 0.15s ease;
+
+    &:hover {
+        color: #4db8ff;
+    }
+}
+
+.ctaMuted {
+    margin-top: auto;
+    align-self: flex-start;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 15px;
+    font-weight: 600;
+    line-height: 1.2;
+    color: #00a3ff;
+    opacity: 0.45;
+    cursor: default;
+    user-select: none;
+}
+
+.ctaArrow {
+    font-size: 1.05em;
+    line-height: 1;
+}

@@ -1,0 +1,10 @@
+.rightCommand {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.link {
+    & > div:first-child {
+        margin-bottom: 10px;
+    }
+}

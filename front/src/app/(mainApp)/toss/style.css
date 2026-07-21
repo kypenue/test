@@ -1,0 +1,36 @@
+.is-deleting {
+    opacity: 0;
+    height: 0;
+    display: none;
+    transform: skewX(50deg) translateX(-25vw);
+}
+
+.participants-list {
+    max-height: 40vh;
+    overflow-y: scroll;
+    scrollbar-width: none;
+    display: grid;
+    grid-gap: 8px;
+    grid-template-columns: 1fr;
+    grid-auto-rows: min-content;
+}
+
+@layer base {
+    .item {
+        opacity: 1;
+        height: 100%;
+        display: grid;
+        overflow: hidden;
+        transform-origin: bottom;
+        transition: opacity 0.5s, transform 0.5s, height 0.5s, display 0.5s allow-discrete;
+    }
+}
+
+
+.custom-modal {
+    background: transparent !important;
+}
+
+.ant-modal-wrap:has(.custom-modal) {
+    backdrop-filter: blur(10px);
+}

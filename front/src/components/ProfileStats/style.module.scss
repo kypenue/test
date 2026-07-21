@@ -1,0 +1,45 @@
+.card {
+    flex: 1 0 auto;
+    width: 100%;
+    border: 1px solid #6122E04D;
+    border-radius: 20px;
+    color: #B9BEEC;
+    background-color: #22195A;
+    align-items: center;
+    align-content: center;
+    padding: 12px;
+
+    h3 {
+        font-size: 15px;
+        line-height: 17px;
+        font-weight: 400;
+    }
+
+    p {
+        font-weight: 600;
+        font-size: 24px;
+        line-height: 27px;
+    }
+
+    h3, p {
+        margin: 0;
+        text-align: center;
+    }
+}
+
+.large {
+    padding-block: 50px;
+}
+
+
+.wrap {
+    align-items: center !important;
+
+    h3 {
+        inline-size: 11ch;
+    }
+}
+
+.wins {
+    padding-block: 33px;
+}

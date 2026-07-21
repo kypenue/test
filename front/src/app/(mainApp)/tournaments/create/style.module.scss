@@ -1,0 +1,21 @@
+.body {
+    margin: 24px auto;
+    min-height: 280px;
+    max-width: 1440px;
+    width: 100%;
+
+    @media (max-width: 768px) {
+        margin: 24px 0;
+    }
+}
+
+.backButton {
+    border: none !important;
+    background: rgba(255, 255, 255, 0.08) !important;
+
+    &:hover {
+        color: unset !important;
+        background: rgba(255, 255, 255, 0.1) !important;
+
+    }
+}

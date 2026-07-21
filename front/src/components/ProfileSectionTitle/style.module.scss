@@ -1,0 +1,9 @@
+.title {
+    font-weight: 500 !important;
+    transition: 0.2s;
+
+    &:hover{
+        transition: 0.2s;
+        text-decoration: underline;
+    }
+}

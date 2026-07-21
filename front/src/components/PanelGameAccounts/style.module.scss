@@ -1,0 +1,17 @@
+.table {
+    :global {
+
+        .ant-table-container .ant-table-thead > tr > th, .ant-table-container .ant-table-thead > tr > td {
+            text-align: center;
+            font-weight: 400;
+        }
+
+        .ant-table-container .ant-table-tbody > tr.ant-table-placeholder, .ant-table-container tbody {
+            background-color: #0E0029;
+        }
+
+        .ant-btn-link {
+            color: #B9BEEC;
+        }
+    }
+}

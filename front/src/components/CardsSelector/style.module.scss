@@ -1,0 +1,32 @@
+.cardContainer {
+    display: flex !important;
+    gap: 16px !important;
+    flex-wrap: wrap;
+}
+
+.card {
+    max-width: 300px !important;
+    flex: 1 1 200px !important;
+    cursor: pointer !important;
+    outline: 1px solid rgb(217, 217, 217, 0.3);
+    transition: outline 0.2s, background 0.2s !important;
+    display: flex;
+    flex-direction: column;
+    background: rgba(255, 255, 255, 0.03);
+
+    &:hover {
+        transition: 0.2s !important;
+        outline: 1px solid rgb(217, 217, 217, 0.5);
+    }
+}
+
+
+.selectedCard {
+    outline: 2px solid #1890ff !important;
+}
+
+.disabled {
+    cursor: not-allowed;
+    pointer-events: none;
+    opacity: 0.5;
+}

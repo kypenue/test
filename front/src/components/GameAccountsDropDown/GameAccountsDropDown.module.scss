@@ -1,0 +1,15 @@
+.dropdown {
+    &:is(&) {
+        min-width: 26ch;
+
+        :global(.ant-select-selection-placeholder) {
+            color: rgba(255, 255, 255, 0.55);
+        }
+    }
+}
+
+.root {
+    & :global(.rc-virtual-list-holder-inner){
+        gap: 4px;
+    }
+}

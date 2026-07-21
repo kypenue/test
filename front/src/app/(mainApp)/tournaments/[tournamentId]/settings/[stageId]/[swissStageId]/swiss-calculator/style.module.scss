@@ -1,0 +1,9 @@
+.customRow {
+    background-color: #0E0029 !important; /* Light blue background */
+}
+
+.table {
+    :global(.ant-table-body) {
+        border-radius: 0 0 12px 12px !important;
+    }
+}

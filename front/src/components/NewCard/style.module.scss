@@ -1,0 +1,13 @@
+.card {
+    background: #091433 !important;
+    border-radius: 12px !important;
+    border: none !important;
+    overflow: hidden;
+}
+
+.card :global(.ant-card-body) {
+    padding: 16px 20px !important;
+    border-radius: 0 0 12px 12px;
+    border: none !important;
+}
+

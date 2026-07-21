@@ -1,0 +1,23 @@
+# Database
+db_dump/
+back/var/
+var/
+*.sql
+*.dump
+*.bak
+
+# Dependencies
+node_modules/
+venv/
+__pycache__/
+
+# Build
+dist/
+build/
+*.log
+
+# Env
+.env
+
+# OS
+.DS_Store

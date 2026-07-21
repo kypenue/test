@@ -1,0 +1,55 @@
+.collapse {
+    --background-color: #0E0029;
+
+    &:is(&) {
+        background-color: var(--background-color);
+        border: 1px solid #6122E04D;
+        padding: 18px 12px;
+        border-radius: 20px;
+
+        :global {
+            .ant-collapse-content {
+                border: 0;
+                background-color: var(--background-color);
+            }
+
+            .ant-collapse-item {
+                &.ant-collapse-item-active {
+                    .ant-collapse-header-text {
+                        color: #ffffff;
+                    }
+                }
+
+                .ant-collapse-header-text {
+                    color: #B9BEEC;
+                    font-size: 15px;
+                    line-height: 17px;
+                    font-weight: 400;
+                }
+            }
+        }
+    }
+}
+
+.card {
+    flex: 1 0 auto;
+    padding: 4px;
+    border: 1px solid #6122E04D;
+    border-radius: 10px;
+    background-color: #150D4A;
+    color: #B9BEEC;
+
+    .title {
+        margin: 0;
+        font-size: 15px;
+        line-height: 17px;
+        font-weight: 500;
+        text-align: center;
+    }
+
+    .text {
+        font-size: 24px;
+        font-weight: 600;
+        line-height: 27px;
+    }
+}

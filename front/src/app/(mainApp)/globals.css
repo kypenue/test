@@ -1,0 +1,136 @@
+:root {
+    /*
+     * Сетка Landing (Figma):
+     * Desktop ≥992: контейнер 1200px, 12 колонок ×78px, gutter 24px (поля 120px при 1440).
+     * Tablet 768–991: контейнер 720px, gutter 16px, поля 24px при 768.
+     * Mobile <768: поля 16px (375 → контент ~343px), gutter 12px.
+     */
+    --cuply-layout-max: 100%;
+    --cuply-layout-pad-inline: 16px;
+    --cuply-layout-gutter: 12px;
+    /* Шапка и футер: контентная полоса до 1200px, без горизонтального padding */
+    --cuply-header-footer-inner-max: 1200px;
+    --cuply-header-height: 64px;
+    /* Ориентир высоты SiteFooter: min-height страниц внутри main, чтобы не суммироваться с футером */
+    --cuply-footer-layout-offset: 480px;
+    --cuply-page-fill-min-height: calc(
+        100vh - var(--cuply-header-height) - var(--cuply-footer-layout-offset)
+    );
+
+    --cuply-header-bg: #091433;
+    --cuply-header-text: #efefef;
+    --cuply-header-login-bg: #1b2954;
+    --cuply-header-login-bg-hover: #243563;
+    --cuply-main-bg: #060c19;
+    --max-width: 1100px;
+    --border-radius: 12px;
+    --font-mono: ui-monospace, Menlo, Monaco, "Cascadia Mono", "Segoe UI Mono",
+        "Roboto Mono", "Oxygen Mono", "Ubuntu Monospace", "Source Code Pro",
+        "Fira Mono", "Droid Sans Mono", "Courier New", monospace;
+
+    --foreground-rgb: 0, 0, 0;
+    --background-start-rgb: 214, 219, 220;
+    --background-end-rgb: 255, 255, 255;
+
+    --primary-glow: conic-gradient(from 180deg at 50% 50%,
+            #16abff33 0deg,
+            #0885ff33 55deg,
+            #54d6ff33 120deg,
+            #0071ff33 160deg,
+            transparent 360deg);
+    --secondary-glow: radial-gradient(rgba(255, 255, 255, 1),
+            rgba(255, 255, 255, 0));
+
+    --tile-start-rgb: 239, 245, 249;
+    --tile-end-rgb: 228, 232, 233;
+    --tile-border: conic-gradient(#00000080,
+            #00000040,
+            #00000030,
+            #00000020,
+            #00000010,
+            #00000010,
+            #00000080);
+
+    --callout-rgb: 238, 240, 241;
+    --callout-border-rgb: 172, 175, 176;
+    --card-rgb: 180, 185, 188;
+    --card-border-rgb: 131, 134, 135;
+}
+
+@media (min-width: 768px) {
+    :root {
+        --cuply-layout-max: 720px;
+        --cuply-layout-pad-inline: 0px;
+        --cuply-layout-gutter: 16px;
+    }
+}
+
+@media (min-width: 992px) {
+    :root {
+        --cuply-layout-max: 1200px;
+        --cuply-layout-pad-inline: 0px;
+        --cuply-layout-gutter: 24px;
+        --cuply-footer-layout-offset: 360px;
+    }
+}
+
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+html,
+body {
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
+body {
+    font-family: system-ui, -apple-system, sans-serif;
+    color: rgb(var(--foreground-rgb));
+    background: var(--cuply-main-bg);
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.ant-radio-button-wrapper:hover {
+    color: unset !important;
+    box-shadow: 0 0 5px rgba(109, 67, 196, 0.5);
+}
+
+@media (prefers-color-scheme: dark) {
+    html {
+        color-scheme: dark;
+    }
+}
+
+[role="button"]:hover,
+button:hover,
+.ant-btn:hover {
+    color: rgba(255, 255, 255, 1) !important;
+    text-shadow: 0 0 2px rgba(255, 255, 255, 0.5) !important;
+
+    * {
+        color: rgba(255, 255, 255, 1) !important;
+        text-shadow: 0 0 2px rgba(255, 255, 255, 0.5) !important;
+
+        * {
+            color: rgba(255, 255, 255, 1) !important;
+            text-shadow: 0 0 2px rgba(255, 255, 255, 0.5) !important;
+
+        }
+    }
+}
+
+.ant-steps-item-finish .ant-steps-icon {
+    color: #fff !important;
+    background-color: #068848bd !important;
+}
+
+.ant-steps-item-disabled {
+    opacity: 0.7 !important;
+}

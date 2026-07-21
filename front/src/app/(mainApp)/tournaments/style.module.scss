@@ -1,0 +1,26 @@
+.body {
+    margin: 24px auto;
+    min-height: 280px;
+    max-width: 960px;
+    width: 100%;
+
+}
+
+.title {
+    text-align: center;
+    font-weight: 800 !important;
+    text-transform: uppercase;
+    margin-bottom: 0 !important;
+}
+
+.subTitle {
+    text-align: center !important;
+    display: block;
+    margin: 0 10%;
+    font-size: 18px !important;
+    font-weight: 400 !important;
+}
+
+.disabled {
+    background: grey !important;
+}

@@ -1,0 +1,32 @@
+.icon {
+    font-size: 16px !important;
+}
+
+.content {
+    min-height: 100px;
+    border-radius: 8px;
+
+    &:not(&[data-readonly="true"]) {
+        border: 1px solid #39009e;
+        padding: 8px 12px;
+        background: #0E0029;
+        transition: border-color .2s linear;
+
+        &:hover {
+            border-color: #7b45d7;
+            background-color: #0E0029;
+        }
+
+        &:focus {
+            border-color: #5520c1;
+            box-shadow: 0 0 0 2px rgba(16, 8, 0, 0.33);
+            outline: 0;
+            background-color: #0E0029;
+        }
+    }
+}
+
+.text {
+    font-size: 14px;
+    line-height: 1.5em;
+}

@@ -1,0 +1,302 @@
+.root {
+    width: 100%;
+    background: var(--cuply-main-bg);
+    /* Мобилка: баннер на всю ширину экрана без боковых полей */
+    padding: 20px 0 0;
+
+    @media (min-width: 768px) {
+        padding: 24px var(--cuply-layout-pad-inline) 0;
+    }
+}
+
+.wrap {
+    max-width: var(--cuply-header-footer-inner-max);
+    margin: 0 auto;
+    width: 100%;
+    isolation: isolate;
+}
+
+.bannerCard {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    border-radius: 0;
+    overflow: hidden;
+    box-shadow: 0 24px 48px rgba(0, 0, 0, 0.28);
+    min-height: 420px;
+
+    @media (min-width: 768px) {
+        border-radius: 28px;
+        min-height: min(68vh, 620px);
+    }
+
+    @media (min-width: 992px) {
+        min-height: min(70vh, 680px);
+    }
+}
+
+.bannerBg {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    pointer-events: none;
+    border-radius: inherit;
+    overflow: hidden;
+}
+
+.bannerImg {
+    object-fit: cover;
+    object-position: center top;
+
+    @media (min-width: 768px) {
+        object-position: center;
+    }
+}
+
+.heroMain {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    min-height: 0;
+    /* Запас снизу: плашки статистики наезжают на баннер (~половина высоты карточки) */
+    padding: 32px 18px 56px;
+
+    @media (min-width: 768px) {
+        padding: 44px 32px 64px;
+    }
+
+    @media (min-width: 992px) {
+        padding: 48px 40px 72px;
+        justify-content: center;
+    }
+}
+
+/* Плашки наполовину на баннере, наполовину на фоне страницы (макет) */
+.statsBlock {
+    position: relative;
+    z-index: 2;
+    margin-top: -44px;
+    padding-bottom: 16px;
+
+    @media (min-width: 768px) {
+        margin-top: -52px;
+        padding-bottom: 20px;
+    }
+
+    @media (min-width: 992px) {
+        margin-top: -56px;
+        padding-bottom: 24px;
+    }
+}
+
+.title {
+    margin: 0 0 14px;
+    width: 100%;
+    max-width: min(100%, 1100px);
+    font-weight: 500;
+    font-size: 36px;
+    line-height: 1.01;
+    letter-spacing: -0.02em;
+    text-align: center;
+    color: #fff;
+
+    @media (min-width: 768px) {
+        font-size: 46px;
+    }
+
+    @media (min-width: 992px) {
+        font-size: 78px;
+    }
+}
+
+.subtitle {
+    margin: 0 0 24px;
+    max-width: 640px;
+    font-size: clamp(14px, 2.1vw, 17px);
+    font-weight: 500;
+    line-height: 1.45;
+    color: rgba(255, 255, 255, 0.95);
+}
+
+.gameCircles {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    margin: 0 0 22px;
+    padding: 0;
+    list-style: none;
+}
+
+.gameCircle {
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    flex-shrink: 0;
+    position: relative;
+    overflow: hidden;
+    background: rgba(255, 255, 255, 0.14);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.gameImg {
+    display: block;
+    width: 64px;
+    height: 64px;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+.gameInitials {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 1;
+    color: #fff;
+    text-transform: uppercase;
+    letter-spacing: 0.02em;
+}
+
+.gamesSkeleton {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 8px;
+    margin: 0 0 22px;
+}
+
+.gamesEmpty {
+    margin: 0 0 22px;
+    max-width: 400px;
+    text-align: center;
+    font-size: 14px;
+    line-height: 1.4;
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.cta {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    max-width: 320px;
+    padding: 12px 24px;
+    border-radius: 8px;
+    font-size: 15px;
+    font-weight: 600;
+    line-height: 1.2;
+    color: #fff !important;
+    background: #3b59ff;
+    border: none;
+    cursor: pointer;
+    text-decoration: none !important;
+    transition: background 0.15s ease, transform 0.15s ease;
+
+    @media (min-width: 768px) {
+        width: auto;
+        max-width: none;
+        padding: 12px 36px;
+        background: #00c8d4;
+    }
+
+    &:hover {
+        background: #2d4ae0;
+        color: #fff !important;
+
+        @media (min-width: 768px) {
+            background: #00d6e3;
+        }
+    }
+
+    &:active {
+        transform: scale(0.99);
+    }
+}
+
+.statsRow {
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 12px;
+    padding: 0 16px 8px;
+    overflow-x: auto;
+    overflow-y: hidden;
+    scroll-snap-type: x proximity;
+    -webkit-overflow-scrolling: touch;
+    /* Скролл только свайпом, полоса прокрутки скрыта (мобилка) */
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+
+    &::-webkit-scrollbar {
+        display: none;
+        width: 0;
+        height: 0;
+    }
+
+    @media (min-width: 768px) {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 12px;
+        padding: 0 0 12px;
+        overflow: visible;
+        scroll-snap-type: none;
+        scrollbar-width: auto;
+        -ms-overflow-style: auto;
+        width: 100%;
+    }
+
+    @media (min-width: 992px) {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 16px;
+        padding: 0 20px 16px;
+    }
+}
+
+.statCard {
+    flex: 0 0 auto;
+    scroll-snap-align: start;
+    width: calc(72vw - 12px);
+    max-width: 260px;
+    min-width: 200px;
+    padding: 20px 18px;
+    border-radius: 12px;
+    background: #101b3c;
+    border: 1px solid #101b3c;
+    text-align: left;
+    box-sizing: border-box;
+
+    @media (min-width: 768px) {
+        min-width: 0;
+        width: 100%;
+        max-width: none;
+        flex: initial;
+        padding: 22px 20px;
+        border-radius: 16px;
+    }
+}
+
+.statValue {
+    margin: 0 0 8px;
+    font-size: clamp(26px, 5vw, 32px);
+    font-weight: 700;
+    line-height: 1.1;
+    color: #fff;
+    font-variant-numeric: tabular-nums;
+}
+
+.statLabel {
+    margin: 0;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 1.35;
+    color: rgba(239, 239, 239, 0.9);
+}

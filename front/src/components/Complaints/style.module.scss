@@ -1,0 +1,43 @@
+.card {
+    background-color: rgba(255, 255, 255, 0.04);
+    border: 0;
+    border-radius: 8px;
+    padding: 16px;
+    max-height: calc(100vh - 500px);
+    overflow-y: auto;
+
+    &.title {
+        text-align: left;
+        margin-bottom: 16px;
+    }
+}
+
+.title {
+    text-align: left;
+    margin-bottom: 16px;
+    opacity: 0.7
+}
+
+.partisipantComplaints {
+    color: #DE5E5E;
+    text-align: center;
+}
+
+.empty {
+    color: #5EDEA8;
+    text-align: left;
+}
+
+.item {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+}
+
+.comment {
+    background-color: #0E0029;
+    border-radius: 8px;
+    padding: 16px;
+    border: 1px solid #39009e;
+    width: 100%;
+}

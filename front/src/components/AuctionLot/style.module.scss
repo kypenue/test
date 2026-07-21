@@ -1,0 +1,405 @@
+.lotCard {
+    padding: 16px;
+    border-radius: 12px;
+    margin-bottom: 16px;
+    border: 1px solid rgba(97, 34, 224, 0.3);
+    background: linear-gradient(135deg, rgba(28, 23, 58, 0.9) 0%, rgba(42, 31, 74, 0.9) 100%);
+    backdrop-filter: blur(20px);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    
+    &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: linear-gradient(135deg, transparent 0%, rgba(97, 34, 224, 0.05) 100%);
+        pointer-events: none;
+    }
+    
+    &:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 16px 48px rgba(0, 0, 0, 0.3);
+    }
+}
+
+.cardYellow {
+    background: linear-gradient(135deg, rgba(255, 193, 7, 0.15) 0%, rgba(255, 193, 7, 0.05) 100%);
+    border-color: #ffc107;
+    box-shadow: 0 8px 32px rgba(255, 193, 7, 0.1);
+    
+    &::before {
+        background: linear-gradient(135deg, rgba(255, 193, 7, 0.1) 0%, transparent 100%);
+    }
+    
+    &:hover {
+        box-shadow: 0 16px 48px rgba(255, 193, 7, 0.2);
+    }
+}
+
+.cardGreen {
+    background: linear-gradient(135deg, rgba(40, 167, 69, 0.15) 0%, rgba(40, 167, 69, 0.05) 100%);
+    border-color: #28a745;
+    box-shadow: 0 8px 32px rgba(40, 167, 69, 0.1);
+    
+    &::before {
+        background: linear-gradient(135deg, rgba(40, 167, 69, 0.1) 0%, transparent 100%);
+    }
+    
+    &:hover {
+        box-shadow: 0 16px 48px rgba(40, 167, 69, 0.2);
+    }
+}
+
+.cardRed {
+    background: linear-gradient(135deg, rgba(220, 53, 69, 0.15) 0%, rgba(220, 53, 69, 0.05) 100%);
+    border-color: #dc3545;
+    box-shadow: 0 8px 32px rgba(220, 53, 69, 0.1);
+    
+    &::before {
+        background: linear-gradient(135deg, rgba(220, 53, 69, 0.1) 0%, transparent 100%);
+    }
+    
+    &:hover {
+        box-shadow: 0 16px 48px rgba(220, 53, 69, 0.2);
+    }
+}
+
+.cardDefault {
+    background: linear-gradient(135deg, rgba(28, 23, 58, 0.9) 0%, rgba(42, 31, 74, 0.9) 100%);
+    border-color: rgba(97, 34, 224, 0.3);
+}
+
+.lotHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 12px;
+    position: relative;
+    z-index: 1;
+}
+
+.teamInfo {
+    flex: 1;
+}
+
+.currentBet {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    align-items: flex-end;
+    text-align: right;
+}
+
+.teamHeader {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.teamLogo {
+    width: 48px;
+    height: 48px;
+    border-radius: 8px;
+    object-fit: cover;
+    border: 2px solid rgba(97, 34, 224, 0.3);
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+    background: linear-gradient(135deg, #1C173A 0%, #2A1F4A 100%);
+}
+
+.teamDetails {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.teamName {
+    display: block;
+    font-size: 16px !important;
+    font-weight: 700;
+    color: #ffffff;
+    margin-bottom: 6px;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.gameInfo {
+    display: block;
+    font-size: 14px;
+    color: #B9BEEC;
+    opacity: 0.9;
+    font-weight: 500;
+}
+
+
+
+.timeLeft {
+    font-size: 16px;
+    font-weight: 700;
+    color: #ffffff;
+    background: linear-gradient(135deg, rgba(97, 34, 224, 0.8) 0%, rgba(97, 34, 224, 0.6) 100%);
+    padding: 8px 16px;
+    border-radius: 12px;
+    min-width: 80px;
+    text-align: center;
+    border: 1px solid rgba(97, 34, 224, 0.5);
+    box-shadow: 0 4px 16px rgba(97, 34, 224, 0.2);
+    backdrop-filter: blur(10px);
+    position: absolute;
+    bottom: 16px;
+    right: 16px;
+    z-index: 2;
+    
+    &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: linear-gradient(135deg, rgba(255, 255, 255, 0.1) 0%, transparent 100%);
+        border-radius: 12px;
+    }
+}
+
+.timeLeftYellow {
+    background: linear-gradient(135deg, rgba(255, 193, 7, 0.9) 0%, rgba(255, 193, 7, 0.7) 100%);
+    border-color: #ffc107;
+    box-shadow: 0 4px 16px rgba(255, 193, 7, 0.3);
+    color: #000000;
+}
+
+.timeLeftRed {
+    background: linear-gradient(135deg, rgba(220, 53, 69, 0.9) 0%, rgba(220, 53, 69, 0.7) 100%);
+    border-color: #dc3545;
+    box-shadow: 0 4px 16px rgba(220, 53, 69, 0.3);
+    color: #ffffff;
+    animation: pulse 1s infinite;
+}
+
+.timeLeftInline {
+    font-size: 16px;
+    font-weight: 700;
+    color: #ffffff;
+    background: linear-gradient(135deg, rgba(97, 34, 224, 0.8) 0%, rgba(97, 34, 224, 0.6) 100%);
+    padding: 8px 16px;
+    border-radius: 12px;
+    min-width: 100px;
+    text-align: center;
+    border: 1px solid rgba(97, 34, 224, 0.5);
+    box-shadow: 0 4px 16px rgba(97, 34, 224, 0.2);
+    backdrop-filter: blur(10px);
+    position: relative;
+    
+    &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: linear-gradient(135deg, rgba(255, 255, 255, 0.1) 0%, transparent 100%);
+        border-radius: 12px;
+    }
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
+
+.betAmount {
+    font-size: 28px !important;
+    font-weight: 800;
+    color: #ffffff;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    background: linear-gradient(135deg, #ffffff 0%, #B9BEEC 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    line-height: 1 !important;
+}
+
+.betAmountGlow {
+    animation: bet-glow 0.6s ease;
+}
+
+@keyframes bet-glow {
+    0% {
+        text-shadow: 0 0 0px #fff, 0 0 0px #6122E0;
+    }
+    30% {
+        text-shadow: 0 0 16px #fff, 0 0 8px #6122E0;
+    }
+    60% {
+        text-shadow: 0 0 12px #fff, 0 0 16px #6122E0;
+    }
+    100% {
+        text-shadow: 0 0 0px #fff, 0 0 0px #6122E0;
+    }
+}
+
+.betterName {
+    font-size: 14px;
+    color: #B9BEEC;
+    opacity: 0.9;
+    font-weight: 500;
+}
+
+.bettingRow {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    margin-top: 12px;
+}
+
+.bettingInterface {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex-wrap: wrap;
+    padding: 12px;
+    background: rgba(97, 34, 224, 0.1);
+    border-radius: 8px;
+    border: 1px solid rgba(97, 34, 224, 0.2);
+    
+    span {
+        font-size: 16px;
+        font-weight: 600;
+        color: #B9BEEC;
+        user-select: none;
+        cursor: default;
+    }
+}
+
+.betInput {
+    height: 40px;
+    background: rgba(14, 0, 41, 0.8);
+    border: 1px solid rgba(97, 34, 224, 0.4);
+    border-radius: 8px;
+    color: #ffffff;
+    text-align: center;
+    font-size: 16px;
+    font-weight: 600;
+    backdrop-filter: blur(10px);
+    width: 120px !important;
+    
+    &::placeholder {
+        color: #B9BEEC;
+        opacity: 0.7;
+    }
+    
+    &:hover {
+        border-color: rgba(97, 34, 224, 0.6);
+        box-shadow: 0 4px 16px rgba(97, 34, 224, 0.1);
+    }
+    
+    &:focus {
+        border-color: #6122E0;
+        box-shadow: 0 0 0 3px rgba(97, 34, 224, 0.2), 0 4px 16px rgba(97, 34, 224, 0.2);
+    }
+    
+    transition: all 0.3s ease;
+}
+
+.statusText {
+    margin-top: 16px;
+    padding-top: 16px;
+    border-top: 1px solid rgba(97, 34, 224, 0.2);
+    position: relative;
+    z-index: 1;
+}
+
+.status {
+    font-size: 14px;
+    color: #B9BEEC;
+    opacity: 0.9;
+    font-weight: 500;
+    padding: 8px 12px;
+    background: rgba(97, 34, 224, 0.1);
+    border-radius: 8px;
+    border: 1px solid rgba(97, 34, 224, 0.2);
+    display: inline-block;
+}
+
+
+
+@media (max-width: 768px) {
+    .lotCard {
+        padding: 12px;
+    }
+    
+    .lotHeader {
+        flex-direction: column;
+        gap: 16px;
+        align-items: stretch;
+    }
+    
+    .currentBet {
+        align-items: flex-start;
+        text-align: left;
+    }
+    
+    .teamInfo {
+        margin-left: 0;
+    }
+    
+    .teamHeader {
+        gap: 12px;
+    }
+    
+    .teamLogo {
+        width: 40px;
+        height: 40px;
+    }
+    
+    .teamName {
+        font-size: 18px !important;
+    }
+    
+    .betAmount {
+        font-size: 28px;
+    }
+    
+    .bettingRow {
+        flex-direction: column;
+        gap: 12px;
+        margin-top: 16px;
+    }
+    
+    .bettingInterface {
+        width: 100%;
+        justify-content: flex-start;
+        padding: 12px;
+    }
+    
+    .timeLeftInline {
+        font-size: 14px;
+        padding: 6px 12px;
+        min-width: 70px;
+        align-self: flex-end;
+    }
+    
+    .betInput {
+        width: 100px;
+    }
+    
+    .timeLeft {
+        font-size: 14px;
+        padding: 6px 12px;
+        min-width: 70px;
+        bottom: 12px;
+        right: 12px;
+    }
+    
+    .statusText {
+        margin-top: 12px;
+        padding-top: 12px;
+    }
+} 

@@ -1,0 +1,1 @@
+export interface PhotoModel {id: string, url: string, file_name: string}

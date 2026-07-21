@@ -1,0 +1,43 @@
+.label {
+    margin-bottom: 8px !important;
+
+    :global(.ant-form-item-label) {
+        padding: 0 !important;
+    }
+}
+
+.status {
+    font-size: 12px;
+    display: block;
+    min-width: 60px;
+
+}
+
+.lower {
+    text-transform: lowercase !important;
+}
+
+.right {
+    text-align: right;
+}
+
+.tooltip {
+    width: 300px
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+
+.anchor {
+    position: absolute;
+    top: 200px;
+}
+
+.account {
+    position: relative;
+    gap: 8px;
+}

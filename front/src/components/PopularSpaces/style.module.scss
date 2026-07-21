@@ -1,0 +1,37 @@
+.wrapper {
+    width: 100%;
+    text-align: left;
+}
+
+.bleed {
+    width: 100vw;
+    margin-left: calc(50% - 50vw);
+    padding-left: max(
+        var(--cuply-layout-pad-inline),
+        calc((100vw - var(--cuply-header-footer-inner-max)) / 2)
+    );
+    padding-right: 0;
+}
+
+.bleed :global(.slick-list) {
+    overflow: visible;
+}
+
+/* When slides count < slidesToShow, keep left-aligned */
+.bleed :global(.slick-track) {
+    margin-left: 0 !important;
+}
+
+.bleed :global(.slick-slide) {
+    padding-right: 16px;
+    box-sizing: border-box;
+}
+
+.limitSlides :global(.slick-slide) {
+    max-width: 384px;
+}
+
+.limitSlides :global(.slick-slide > div) {
+    width: 100%;
+}
+

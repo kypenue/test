@@ -1,0 +1,82 @@
+services:
+  db:
+    image: postgres:16
+    container_name: cuply_db
+    command: postgres -c config_file=/etc/postgresql.conf
+    env_file:
+      - ./back/.env
+    volumes:
+      - ./back/etc/postgres/postgresql.conf:/etc/postgresql.conf
+      - ./back/var/postgres/data:/var/lib/postgresql/data
+    ports:
+      - "127.0.0.1:5432:5432"
+    restart: always
+    networks:
+      - cuply_net
+
+  redis:
+    image: redis:7.2.5-alpine
+    command: redis-server /usr/local/etc/redis/redis.conf
+    container_name: cuply_redis
+    env_file:
+      - ./back/.env
+    volumes:
+      - ./back/etc/redis/redis.conf:/usr/local/etc/redis/redis.conf
+      - ./back/var/redis/data:/var/lib/redis
+    ports:
+      - "127.0.0.1:6379:6379"
+    restart: always
+    networks:
+      - cuply_net
+
+  minio:
+    image: minio/minio:latest
+    container_name: cuply_minio
+    command: server /data --console-address ":9001"
+    environment:
+      MINIO_ROOT_USER: ${S3_ACCESS}
+      MINIO_ROOT_PASSWORD: ${S3_SECRET}
+    volumes:
+      - ./back/var/minio/data:/data
+    ports:
+      - "127.0.0.1:9000:9000"
+      - "127.0.0.1:9001:9001"   # веб-консоль MinIO, удобно для отладки
+    restart: always
+    networks:
+      - cuply_net
+
+  cuply:
+    image: cuply_app:latest
+    build:
+      context: ./back
+    container_name: cuply_app
+    command: gunicorn -c /etc/gunicorn.conf.py
+    env_file:
+      - ./back/.env
+    volumes:
+      - ./back/src:/fastapi_cuply
+      - ./back/etc/backend/gunicorn.conf.py:/etc/gunicorn.conf.py
+      - ./back/var/logs:/var/logs
+    ports:
+      - "127.0.0.1:8000:8000"
+    restart: always
+    depends_on:
+      - db
+      - redis
+      - minio
+    networks:
+      - cuply_net
+
+  frontend:
+    build:
+      context: ./front
+    container_name: cuply_front
+    restart: always
+    ports:
+      - "127.0.0.1:3000:3000"
+    networks:
+      - cuply_net
+
+networks:
+  cuply_net:
+    driver: bridge

@@ -1,0 +1,45 @@
+$componentWidth: 190px;
+$inputHeight: 70px;
+
+.competitionScore {
+    width: $componentWidth;
+}
+
+.scoreWrapper {
+    height: $inputHeight;
+    width: $componentWidth;
+}
+
+.inputWrapper {
+    height: 100%;
+}
+
+.firstScore {
+    text-align: right !important;
+}
+
+.scoreText {
+    font-size: calc($inputHeight / 2) !important;
+    font-family: var(--score-board) !important;
+    font-weight: 100 !important;
+    padding-top: 14px;
+    //line-height: 30px !important;
+    color: white !important;
+}
+
+.input {
+    //height: 100%;
+    width: 75px !important;
+    padding: 14px 11px 4px 11px !important;
+    -moz-appearance: textfield;
+
+    &::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+    }
+
+    &:global(.ant-input-disabled) {
+        color: rgba(255, 255, 255) !important;
+        cursor: auto !important;
+    }
+}
