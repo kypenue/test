@@ -1,7 +1,6 @@
 "use client";
 
 import Link from "next/link";
-import { FooterTelegramMenu } from "@/components/TelegramButton";
 import s from "./style.module.scss";
 
 const MENU_LINKS: { href: string; label: string }[] = [
@@ -89,26 +88,6 @@ export const SiteFooter = () => {
                             ))}
                         </ul>
                     </section>
-
-                    <section className={s.topCol}>
-                        <h2 className={s.blockTitle}>Контакты</h2>
-                        <div className={s.contacts}>
-                            <span>ИП «CUPLYPRO»</span>
-                            <span>ОГРН 13928404383</span>
-                            <span>
-                                Email:{" "}
-                                <a
-                                    className={s.link}
-                                    href="mailto:Cuply@cupmail.ru"
-                                >
-                                    Cuply@cupmail.ru
-                                </a>
-                            </span>
-                        </div>
-                        <div className={s.contactsTg}>
-                            <FooterTelegramMenu />
-                        </div>
-                    </section>
                 </div>
 
                 <div className={s.bottomDesktop}>
@@ -123,9 +102,6 @@ export const SiteFooter = () => {
                         />
                     </Link>
                     <div className={s.bottomRight}>
-                        <div className={s.telegramSlot}>
-                            <FooterTelegramMenu />
-                        </div>
                         <CopyrightBlock className={s.copyright} />
                     </div>
                 </div>
