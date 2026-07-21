@@ -1,0 +1,6 @@
+class BaseTournamentRoleException(Exception):
+    ...
+
+
+class UserCannotDeleteOwnTournamentRolesException(BaseTournamentRoleException):
+    ...

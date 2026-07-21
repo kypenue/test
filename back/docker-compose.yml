@@ -1,0 +1,45 @@
+services:
+  db:
+    image: postgres:14.1
+    container_name: cuply_db
+    command: postgres -c config_file=/etc/postgresql.conf
+    env_file:
+      - .env
+    volumes:
+      - ./etc/postgres/postgresql.conf:/etc/postgresql.conf
+      - ./var/postgres/data:/var/lib/postgresql/data
+    ports:
+      - "5432:5432"
+    restart: always
+
+  redis:
+    image: redis:7.2.5-alpine
+    command: redis-server /usr/local/etc/redis/redis.conf
+    container_name: cuply_redis
+    env_file:
+      - .env
+    volumes:
+      - ./etc/redis/redis.conf:/usr/local/etc/redis/redis.conf
+      - ./var/redis/data:/var/lib/redis
+    ports:
+      - "6379:6379"
+    restart: always
+
+  cuply:
+    image: cuply_app:latest
+    build:
+      context: .
+    container_name: cuply_app
+    command: gunicorn -c /etc/gunicorn.conf.py
+    env_file:
+      - .env
+    volumes:
+      - ./src:/fastapi_cuply
+      - ./etc/backend/gunicorn.conf.py:/etc/gunicorn.conf.py
+      - ./var/logs:/var/logs
+    ports:
+      - "8000:8000"
+    restart: always
+    depends_on:
+      - db
+      - redis

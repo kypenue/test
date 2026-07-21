@@ -1,0 +1,6 @@
+class BaseCommunityRoleException(Exception):
+    ...
+
+
+class UserCannotDeleteOwnCommunityRolesException(BaseCommunityRoleException):
+    ...

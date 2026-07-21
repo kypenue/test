@@ -1,0 +1,6 @@
+class BaseAuthException(Exception):
+    ...
+
+
+class UserWithThatEmailAlreadyExists(BaseAuthException):
+    ...

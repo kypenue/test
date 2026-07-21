@@ -1,0 +1,6 @@
+class BaseSystemRoleException(Exception):
+    ...
+
+
+class UserCannotDeleteOwnSystemRolesException(BaseSystemRoleException):
+    ...
