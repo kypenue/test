@@ -14,7 +14,7 @@ from starlette import status
 
 from backlib.utils import has_number, has_character
 from config import ConfigEnv
-from cuply.auth.email_helpers import send_email_async
+from cuply.auth.email_helpers import send_email_background
 from cuply.auth.models import UserModel, UserRoles
 from cuply.auth.schemas import UserCreateSchema
 from cuply.auth.utils import get_user_db
@@ -35,7 +35,7 @@ class UserManager(IntegerIDMixin, BaseUserManager[UserModel, int]):
         request: Optional[Request] = None,
     ):
         cuply_logger.info(f"User with id '{user.id}' has forgot its password. Reset token: {token}")
-        await send_email_async(
+        send_email_background(
             subject="CUPLY - сброс пароля",
             email_to=user.email,
             body={
@@ -53,7 +53,7 @@ class UserManager(IntegerIDMixin, BaseUserManager[UserModel, int]):
         request: Optional[Request] = None,
     ):
         cuply_logger.info(f"User with id '{user.id}' wants to verify email. Verify token: {token}")
-        await send_email_async(
+        send_email_background(
             subject="CUPLY - подтверждение почты",
             email_to=user.email,
             body={
