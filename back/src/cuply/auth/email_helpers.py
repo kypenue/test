@@ -17,8 +17,8 @@ conf = ConnectionConfig(
     MAIL_PORT=ConfigEnv.EMAIL_PORT,
     MAIL_SERVER=ConfigEnv.EMAIL_HOST,
     MAIL_FROM_NAME=ConfigEnv.EMAIL_FROM_NAME,
-    MAIL_STARTTLS=False,
-    MAIL_SSL_TLS=True,
+    MAIL_STARTTLS=True,
+    MAIL_SSL_TLS=False,
     USE_CREDENTIALS=True,
     TEMPLATE_FOLDER=os.path.join(BASE_DIR, "templates", "email")
 )
