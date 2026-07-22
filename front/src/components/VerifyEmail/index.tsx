@@ -75,19 +75,19 @@ export const VerifyEmail = () => {
                     <Button
                         type="primary"
                         size={"large"}
-                        href={"/auth"}
+                        href={"/account/current"}
                         style={{ marginTop: 36 }}
                     >
-                        Войти
+                        Мой аккаунт
                     </Button>
                 ) : (
                     <Button
                         type="primary"
                         size={"large"}
-                        href={"/account/current"}
+                        href={"/auth"}
                         style={{ marginTop: 36 }}
                     >
-                        Мой аккаунт
+                        Войти
                     </Button>
                 )}
             </div>
