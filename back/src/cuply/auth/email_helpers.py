@@ -1,3 +1,4 @@
+import asyncio
 import os.path
 from pathlib import Path
 from typing import Optional
@@ -40,3 +41,29 @@ async def send_email_async(
     fm = FastMail(conf)
     cuply_logger.info(f"Sending message to email: '{email_to}'")
     await fm.send_message(message, template_name=template_name)
+
+
+def send_email_background(
+    subject: str,
+    email_to: str,
+    body: dict,
+    template_name: Optional[str] = None,
+):
+    """
+    Запускает отправку письма в фоне, не блокируя ответ клиенту.
+    Ошибки логируются, но не пробрасываются наверх.
+    """
+    async def _send():
+        try:
+            await send_email_async(
+                subject=subject,
+                email_to=email_to,
+                body=body,
+                template_name=template_name,
+            )
+        except Exception:
+            cuply_logger.exception(
+                f"Failed to send background email to '{email_to}' (subject: '{subject}')"
+            )
+
+    asyncio.create_task(_send())
